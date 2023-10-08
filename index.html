@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>My Calculator</h1>
+    <div class="selection">
+        <label for="Select">Select Calculator</label>
+        <select name="choice" class="choice" id="select">
+            <option value="SIM" selected>Simple</option>
+            <option value="SCI">Scientific</option>
+        </select>
+        <input class="choice" id="submit" type="submit" value="Search">
+    </div>
+
+    <div class="container">
+        <table id="calculator">
+            <tr>
+                <th colspan="4">
+                    <input type="text" id="input">
+                </th>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="clear" class="operator" value="CLR" onclick="clr()"></td>
+                <td><input type="button" id="del" class="operator" value="DEL" onclick="del()"></td>
+                <td><input type="button" id="ans" class="operator" value="ANS" onclick="show('ans')"></td>
+                <td><input type="button" class="operator" value="/" onclick="show('/')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" class="operand" value="7" onclick="show('7')"></td>
+                <td><input type="button" class="operand" value="8" onclick="show('8')"></td>
+                <td><input type="button" class="operand" value="9" onclick="show('9')"></td>
+                <td><input type="button" class="operator" value="*" onclick="show('*')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" class="operand" value="4" onclick="show('4')"></td>
+                <td><input type="button" class="operand" value="5" onclick="show('5')"></td>
+                <td><input type="button" class="operand" value="6" onclick="show('6')"></td>
+                <td><input type="button" class="operator" value="-" onclick="show('-')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" class="operand" value="1" onclick="show('1')"></td>
+                <td><input type="button" class="operand" value="2" onclick="show('2')"></td>
+                <td><input type="button" class="operand" value="3" onclick="show('3')"></td>
+                <td><input type="button" class="operator" value="+" onclick="show('+')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" class="operand" value="." onclick="show('.')"></td>
+                <td><input type="button" class="operand" value="0" onclick="show('0')"></td>
+                <td colspan="2"><input type="button" id="equals" value="=" onclick="calculate()"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
