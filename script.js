@@ -33,7 +33,7 @@ function onClickCell8() {
     log();
 }
 
-let rowsAdded = false;
+let rowsAdded = false;                              //To ensure that the rows are added only once.
 
 
 submit.addEventListener("click", e => {
@@ -42,7 +42,7 @@ submit.addEventListener("click", e => {
      if (Choice === "SIM") {
 
         while (table.rows.length > 6) {
-            table.deleteRow(1);    //need some fixing.
+            table.deleteRow(1);                         //need some fixing.
         }
 
         rowsAdded = false;
@@ -63,16 +63,9 @@ submit.addEventListener("click", e => {
         let cell7 = row2.insertCell(2);
         let cell8 = row2.insertCell(3);
 
-        cell1.className = "operator";
-        cell2.className = "operator";
-        cell3.className = "operator";
-        cell4.className = "operator";
-        cell5.className = "operator";
-        cell6.className = "operator";
-        cell7.className = "operator";
-        cell8.className = "operator";
+        cell1.className = cell2.className = cell3.className = cell4.className = cell5.className = cell6.className = cell7.className = cell8.className = "operator";
 
-        cell1.onclick = onClickCell1;
+        cell1.onclick = onClickCell1;    //When used square() directly, the function executed as soon as i shifted to scientific calculator
         cell2.onclick = onClickCell2;
         cell3.onclick = onClickCell3;
         cell4.onclick = onClickCell4;
@@ -117,6 +110,8 @@ function show(input) {
     }
 }
 
+//For Simple Calculator
+
 function calculate() {
     let x = document.getElementById("input").value
     result = eval(x)
@@ -127,45 +122,45 @@ function calculate() {
 
 function square() {
     let inputValue = document.getElementById("input").value;
-    const result = eval(inputValue) ** 2;
+    const result = inputValue ** 2;
     document.getElementById("input").value = result;
 }
 
 function squareRoot() {
-    const inputValue = document.getElementById("input").value;
-    const result = Math.sqrt(eval(inputValue));
+    let inputValue = document.getElementById("input").value;
+    const result = Math.sqrt(inputValue);
     document.getElementById("input").value = result;
 }
 
 function percent() {
-    const inputValue = document.getElementById("input").value;
-    const result = eval(inputValue) / 100;
+    let inputValue = document.getElementById("input").value;
+    const result = inputValue / 100;
     document.getElementById("input").value = result;
 }
 
 function sin() {
-    const inputValue = document.getElementById("input").value;
+    let inputValue = document.getElementById("input").value;
     const radians = inputValue * Math.PI / 180
-    const result = Math.sin(radians);
+    const result = Math.sin(radians);                              //Math.sin() takes radian value.
     document.getElementById("input").value = result;
 }
 
 function cos() {
-    const inputValue = document.getElementById("input").value;
+    let inputValue = document.getElementById("input").value;
     const radians = inputValue * Math.PI / 180
     const result = Math.cos(radians);
     document.getElementById("input").value = result;
 }
 
 function tan() {
-    const inputValue = document.getElementById("input").value;
+    let inputValue = document.getElementById("input").value;
     const radians = inputValue * Math.PI / 180
     const result = Math.tan(radians);
     document.getElementById("input").value = result;
 }
 
 function log() {
-    const inputValue = document.getElementById("input").value;
-    const result = Math.log10(eval(inputValue));
+    let inputValue = document.getElementById("input").value;
+    const result = Math.log10(inputValue);
     document.getElementById("input").value = result;
 }

@@ -22,6 +22,14 @@ h1 {
     font-size: 30px;
 }
 
+.notes {
+    color: rgb(246, 242, 246);
+    text-align: left; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
 .choice {
     color: rgb(179, 212, 212);
     background-color: black;
@@ -70,11 +78,9 @@ input[type="text"] {
     background-color: rgb(234, 238, 239);
     font-weight: bold;
     border-radius: 5px;
-    /* box-shadow: 5px 5px 5px rgba(7, 3, 3, 0.2);  */
 }
 
 .operator {
-
     padding: 20px 40px;
     color: white;
     font-size: 24px;
